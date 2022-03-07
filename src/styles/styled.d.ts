@@ -8,6 +8,7 @@ declare module "styled-components" {
       green: string;
       white: string;
       black: string;
+      middleGrey: string;
     };
     screen: {
       sl: number;
