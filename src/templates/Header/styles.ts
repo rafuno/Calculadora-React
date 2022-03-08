@@ -32,7 +32,6 @@ export const ContainerHeader = styled.div`
         margin: 5px;
       }
 
-      align-items: ;
       display: flex;
       align-items: center;
       img {

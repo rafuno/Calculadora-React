@@ -1,10 +1,15 @@
 import React from "react";
 import Button from "../components/Button";
 import Display from "../templates/Display";
+import Equality from "../templates/Equality-button";
+
 import Header from "../templates/Header";
 import { ContainerCalculadora } from "./styles";
 
 const Calculadora: React.FC = () => {
+  const handleResult = () => {
+    console.log("resultado");
+  };
   const buttonsCalc = [
     {
       display: "7",
@@ -63,7 +68,7 @@ const Calculadora: React.FC = () => {
       value: "%",
     },
     {
-      display: ".",
+      display: ",",
       value: ".",
     },
     {
@@ -84,9 +89,15 @@ const Calculadora: React.FC = () => {
     <ContainerCalculadora>
       <Header />
       <Display value={0} />
-      {buttonsCalc.map((button) => (
-        <Button value={button.value}> {button.display} </Button>
-      ))}
+
+      <div className="position-buttons">
+        {buttonsCalc.map((button) => (
+          <Button value={button.value}> {button.display} </Button>
+        ))}
+        <div className="equality">
+          <Equality onClickResult={handleResult}> = </Equality>
+        </div>
+      </div>
     </ContainerCalculadora>
   );
 };

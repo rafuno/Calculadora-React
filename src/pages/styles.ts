@@ -13,5 +13,11 @@ export const ContainerCalculadora = styled.div`
       justify-content: center;
       border-radius: 5px;
     }
+
+    .equality {
+      width: 155px;
+      margin: 8px;
+      display: inline-block;
+    }
   `}
 `;
