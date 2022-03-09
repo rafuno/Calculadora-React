@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ContainerEquality = styled.button`
+export const ContainerResult = styled.button`
   ${({ theme }) => css`
     background-color: ${theme.colors.green};
     width: 100%;

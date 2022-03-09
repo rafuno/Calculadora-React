@@ -2,13 +2,25 @@ import React from "react";
 import { ContainerDisplay } from "./styles";
 
 type DisplayProps = {
-  value: number;
+  acumulator: string;
+  primeiroNumero: string;
+  segundoNumero: string;
+  resultado: string;
 };
 
-const Display: React.FC<DisplayProps> = ({ value }) => {
+const Display: React.FC<DisplayProps> = ({
+  acumulator,
+  primeiroNumero,
+  segundoNumero,
+  resultado,
+}) => {
   return (
     <ContainerDisplay>
-      <input type="text" value={value} />
+      <input
+        type="text"
+        defaultValue={0}
+        value={primeiroNumero + acumulator + segundoNumero + resultado}
+      />
     </ContainerDisplay>
   );
 };

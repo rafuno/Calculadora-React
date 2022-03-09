@@ -14,7 +14,7 @@ export const ContainerCalculadora = styled.div`
       border-radius: 5px;
     }
 
-    .equality {
+    .result {
       width: 155px;
       margin: 8px;
       display: inline-block;
