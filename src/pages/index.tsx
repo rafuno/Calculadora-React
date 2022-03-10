@@ -10,14 +10,14 @@ const Calculadora: React.FC = () => {
   const [primeiroNumero, setprimeiroNumero] = React.useState("");
   const [segundoNumero, setSegundoNumero] = React.useState("");
   const [operadorNaTela, setOperadorNatela] = React.useState("");
-  const [resultado, setResultado] = React.useState('')
-
+  const [resultado, setResultado] = React.useState("");
 
   //Setar o primeiro e segundo número a ser "operado"
   const operador = (numero: string) => {
-    //Se o operador existir, seta o segundo número
+    if (resultado !== "") {
+      return;
+    }
     if (operadorNaTela !== "") {
-      debugger
       setSegundoNumero(segundoNumero + numero);
       return;
     }
@@ -37,7 +37,9 @@ const Calculadora: React.FC = () => {
     setprimeiroNumero("");
     setOperadorNatela("");
     setSegundoNumero("");
-    setResultado('')
+    if (resultado !== "") {
+      setResultado("");
+    }
   };
 
   const handleResult = () => {
@@ -59,13 +61,21 @@ const Calculadora: React.FC = () => {
         valorTotal = valorPrimNumInt / valorSeguNumInt;
         break;
 
-        
+      case "**":
+        valorTotal = valorPrimNumInt ** valorSeguNumInt;
+        break;
+
       default:
-        valorTotal = "";
+        valorTotal = resultado;
     }
 
-    setResultado('=' + String(valorTotal));
-    return
+    setResultado(String(valorTotal));
+    console.log(typeof valorTotal);
+    if (resultado !== "") {
+      return;
+    }
+    limparMemoria();
+    return;
   };
 
   const buttonsCalc = [
@@ -105,7 +115,7 @@ const Calculadora: React.FC = () => {
       func: (numero: any) => operador(numero.target.value),
     },
     {
-      display: "/",
+      display: "÷",
       value: "/",
       func: (operador: any) => operacao(operador.target.value),
     },
@@ -150,8 +160,8 @@ const Calculadora: React.FC = () => {
       func: (operador: any) => operacao(operador.target.value),
     },
     {
-      display: "²",
-      value: "²",
+      display: "**",
+      value: "**",
       func: (operador: any) => operacao(operador.target.value),
     },
     {
@@ -164,12 +174,14 @@ const Calculadora: React.FC = () => {
   return (
     <ContainerCalculadora>
       <Header />
-      <Display
-        resultado={resultado}
-        primeiroNumero={primeiroNumero}
-        acumulator={operadorNaTela}
-        segundoNumero={segundoNumero}
-      />
+      <div className="center">
+        <Display
+          resultado={resultado}
+          primeiroNumero={primeiroNumero}
+          operador={operadorNaTela}
+          segundoNumero={segundoNumero}
+        />
+      </div>
 
       <div className="position-buttons">
         {buttonsCalc.map((button, index) => (
