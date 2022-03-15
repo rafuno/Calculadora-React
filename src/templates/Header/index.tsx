@@ -1,11 +1,11 @@
 import React from "react";
 import { ContainerHeader } from "./styles";
-import MenuHamburguer from "../../assets/icons/MenuHamburguer.svg";
-import ExitButton from "../../assets/icons/ExitButton.svg";
+/* import MenuHamburguer from "../../assets/icons/MenuHamburguer.svg";
+import ExitButton from "../../assets/icons/ExitButton.svg"; */
 const Header: React.FC = () => {
   return (
     <ContainerHeader>
-      <div className="output"></div>
+  {/*     <div className="output"></div>
       <div className="nav-buttons">
         <div>
           <img src={MenuHamburguer} alt="" />
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <div>
           <img src={ExitButton} alt="" />
         </div>
-      </div>
+      </div> */}
     </ContainerHeader>
   );
 };

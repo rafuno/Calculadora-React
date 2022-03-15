@@ -5,8 +5,8 @@ export const ContainerHeader = styled.div`
     display: flex;
     align-items: center;
     background-color: ${theme.colors.grey};
-    height: 80px;
-    border-radius: 5px;
+    height: 50px;
+    border-radius: 20px;
 
     .output {
       margin: 0 auto;
@@ -19,7 +19,7 @@ export const ContainerHeader = styled.div`
       width: 246px;
       height: 36px;
     }
-
+/* 
     .nav-buttons {
       div {
         background-color: ${theme.colors.white};
@@ -30,7 +30,7 @@ export const ContainerHeader = styled.div`
         justify-content: center;
         align-items: center;
         margin: 5px;
-      }
+      } */
 
       display: flex;
       align-items: center;
