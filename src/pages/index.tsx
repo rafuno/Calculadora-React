@@ -41,6 +41,7 @@ const Calculadora: React.FC = () => {
   };
 
   const handleResult = () => {
+    
     let valorPrimNumInt = parseInt(primeiroNumero);
     let valorSeguNumInt = parseInt(segundoNumero);
     let valorTotal;
